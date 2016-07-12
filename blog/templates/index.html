@@ -1,80 +1,95 @@
-<h1>Hello alen</h1>
-{{title}}
-<li>name: {{user.name}}</li>
-<li>age: {{user.age}}</li>
-<li>gender: {{user.gender}}</li>
-<li>book 1: {{user.books.0}}</li>
-<li>book 2: {{user.books.1}}</li>
+{% load staticfiles %}
 
-<li>brother name: {{user.brother.name}}</li>
-<li>brother age: {{user.brother.age}}</li>
+<html>
+    <head>
+        <!-- add css -->
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-theme.min.css' %}">
+        
+        <!-- add js -->
+        <script type="text/javascript" src="{% static 'jquery/js/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    </head>
 
-{% if 1 and 1 %}
-    True
-{% else %}
-    False
-{% endif %}
-
-<li>
-{% for book in user.books %}
-    {{ forloop.counter0 }}
-    {{ book }} 
-    {% if not forloop.last %},{% endif %}
-{% endfor %}
-</li>
-
-<li>
-{% for book in user.books %}
-    {{ forloop.counter }}
-    {{ book }} 
-    {% if not forloop.last %},{% endif %}
-{% endfor %}
-</li>
-
-<li>
-{% for book in user.books %}
-    {{ forloop.revcounter }}
-    {{ book }} 
-    {% if not forloop.last %},{% endif %}
-{% endfor %}
-</li>
-
-<li>
-{% for book in user.books %}
-    {{ forloop.revcounter0 }}
-    {{ book }} 
-    {% if not forloop.last %},{% endif %}
-{% endfor %}
-</li>
-
-<li>id: {{ id }}</li>
-<li>emps: {{ emps }}</li>
-
-<table>
-    <tr>
-        <th>num</th>
-        <th>name</th>
-        <th>age</th>
-        <th>gender</th>
-    </tr>
-    {% for emp in emps %}
-    <tr>
-        <td>{{ forloop.counter }}</td>
-        <td>{{ emp.name }}</td>
-        <td>{{ emp.age }}</td>
-        <td>
-        {% if emp.gender == 1 %}
-            男
-        {% elif emp.gender == 2 %}
-            女
+    <body>
+        <div class='container'>
+            <h1>Hello alen</h1>
+        </div>
+        {{title}}
+        <li>name: {{user.name}}</li>
+        <li>age: {{user.age}}</li>
+        <li>gender: {{user.gender}}</li>
+        <li>book 1: {{user.books.0}}</li>
+        <li>book 2: {{user.books.1}}</li>
+        
+        <li>brother name: {{user.brother.name}}</li>
+        <li>brother age: {{user.brother.age}}</li>
+        
+        {% if 1 and 1 %}
+            True
         {% else %}
-            其他
+            False
         {% endif %}
-        </td>
-    </tr>
-    {% endfor %}
-</table>
-
-
-
+        
+        <li>
+        {% for book in user.books %}
+            {{ forloop.counter0 }}
+            {{ book }} 
+            {% if not forloop.last %},{% endif %}
+        {% endfor %}
+        </li>
+        
+        <li>
+        {% for book in user.books %}
+            {{ forloop.counter }}
+            {{ book }} 
+            {% if not forloop.last %},{% endif %}
+        {% endfor %}
+        </li>
+        
+        <li>
+        {% for book in user.books %}
+            {{ forloop.revcounter }}
+            {{ book }} 
+            {% if not forloop.last %},{% endif %}
+        {% endfor %}
+        </li>
+        
+        <li>
+        {% for book in user.books %}
+            {{ forloop.revcounter0 }}
+            {{ book }} 
+            {% if not forloop.last %},{% endif %}
+        {% endfor %}
+        </li>
+        
+        <li>id: {{ id }}</li>
+        <li>emps: {{ emps }}</li>
+        
+        <table>
+            <tr>
+                <th>num</th>
+                <th>name</th>
+                <th>age</th>
+                <th>gender</th>
+            </tr>
+            {% for emp in emps %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ emp.name }}</td>
+                <td>{{ emp.age }}</td>
+                <td>
+                {% if emp.gender == 1 %}
+                    男
+                {% elif emp.gender == 2 %}
+                    女
+                {% else %}
+                    其他
+                {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
 

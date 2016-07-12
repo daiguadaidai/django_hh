@@ -56,7 +56,9 @@ ROOT_URLCONF = 'hh.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,7 +83,7 @@ DATABASES = {
         'NAME': 'blog',
         'USER':'HH',
         'PASSWORD':'oracle',
-        'HOST':'192.168.137.11',
+        'HOST':'192.168.1.233',
         'PORT':'3306',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
@@ -106,3 +108,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)

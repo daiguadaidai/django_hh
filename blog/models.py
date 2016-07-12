@@ -63,8 +63,7 @@ class Car(models.Model):
     create_time= models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
 
-    # engine = models.OneToOneField(Engine)
-    engine = models.ForeignKey(Engine, unique=True)
+    engine = models.OneToOneField(Engine)
 
     def __unicode__(self):
         """Java toString 方法"""

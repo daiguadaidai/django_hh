@@ -5,7 +5,7 @@ CREATE TABLE employee(
     name VARCHAR(10) NOT NULL DEFAULT '' COMMENT '员工姓名',
     age TINYINT unsigned NOT NULL DEFAULT 0 COMMENT '员工年龄',
     gender TINYINT unsigned NOT NULL DEFAULT 1 COMMENT '性别: 1、男，2、女、3、其他',
-    dept_id BIGINT NOT unsigned NOT NULL COMMENT '部门ID',
+    dept_id BIGINT unsigned NOT NULL COMMENT '部门ID',
     create_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     update_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
     PRIMARY KEY(employee_id),

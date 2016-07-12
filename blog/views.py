@@ -20,3 +20,6 @@ def index(request, id):
     emps = Employee.objects.all()
 
     return render(request, 'index.html', {'title': 'title', 'user': user, 'id': id, 'emps': emps})
+
+def test(request):
+    return render(request, 'test.html')

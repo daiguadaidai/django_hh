@@ -1,0 +1,474 @@
+{%extends 'app_base.html' %}
+
+{% block css %} 自己模块需要的css {% endblock %}
+{% block js %} 自己模块需要的js {% endblock %}
+
+{% block title %}test页面{% endblock %}
+
+
+<!-- 需要操作和展示的内容 -->
+{% block content %}
+
+<h2>表格</h2>
+<p>创建响应式表格 (将在小于768px的小型设备下水平滚动)。另外：添加交替单元格的背景色：</p>
+
+<div class="table-responsive"> 
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Street</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Anna Awesome</td>
+                <td>Broome Street</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Debbie Dallas</td>
+                <td>Houston Street</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>John Doe</td>
+                <td>Madison Street</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>图像</h2>
+<p>创建项应式图片(将扩展到父元素)。 另外：图片以椭圆型展示：</p>
+<img src="/static/img/1.jpg" class="img-responsive img-circle" alt="Cinque Terre" width="304" height="236">
+<h2>图标</h2>
+<p>插入图标:</p>
+<p>云图标: <span class="glyphicon glyphicon-cloud"></span></p>
+<p>信件图标: <span class="glyphicon glyphicon-enve10pe"></span></p>
+<p>搜索图标: <span class="glyphicon glyphicon-search"></span></p>
+<p>打印图标: <span class="glyphicon glyphicon-print"></span></p>
+<p>下载图标：<span class="glyphicon glyphicon-download"></span></p>
+
+<!-- 使用网格布局 -->
+<div class='rows'>
+    <div class='col-xs-4'>这里是一行</div>
+    <div class='col-xs-4'>这里是一行</div>
+    <div class='col-xs-4'>这里是一行</div>
+</div>
+
+<!-- 响应式的列重置 -->
+<div class="row" >
+    <div class="col-xs-6 col-sm-3"
+        style="background-color: #dedef8;
+        box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+    <div class="col-xs-6 col-sm-3"
+        style="background-color: #dedef8;box-shadow:
+        inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+           enim ad minim veniam, quis nostrud exercitation ullamco laboris
+           nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+           eiusmod tempor incididunt ut.
+        </p>
+    </div>
+
+    <div class="clearfix visible-xs"></div>
+
+    <div class="col-xs-6 col-sm-3"
+        style="background-color: #dedef8;
+        box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
+           laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+    </div>
+    <div class="col-xs-6 col-sm-3"
+        style="background-color: #dedef8;box-shadow:
+        inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+           enim ad minim
+        </p>
+    </div>
+</div>
+
+<!-- 偏移列 -->
+<h1>Hello, world!</h1>
+
+<div class="row" >
+    <div class="col-xs-6 col-md-offset-3"
+        style="background-color: #dedef8;box-shadow:
+        inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+           elit.
+        </p>
+    </div>
+</div>
+
+<!-- 嵌套列 -->
+<h1>Hello, world!</h1>
+ 
+<div class="row">
+    <div class="col-md-3" style="background-color: #dedef8;box-shadow:
+        inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        <h4>第一列</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+
+    <div class="col-md-9" style="background-color: #dedef8;box-shadow:
+        inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        <h4>第二列 - 分为四个盒子</h4>
+        <div class="row">
+            <div class="col-md-6" style="background-color: #B18904;
+                box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                <p>Consectetur art party Tonx culpa semiotics. Pinterest
+                   assumenda minim organic quis.
+                </p>
+            </div>
+            <div class="col-md-6" style="background-color: #B18904;
+                box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                <p> sed do eiusmod tempor incididunt ut labore et dolore magna
+                   aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                   ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" style="background-color: #B18904;
+                box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                <p>quis nostrud exercitation ullamco laboris nisi ut
+                   aliquip ex ea commodo consequat.
+                </p>
+            </div>  
+            <div class="col-md-6" style="background-color: #B18904;
+                box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                   sed do eiusmod tempor incididunt ut labore et dolore magna
+                   aliqua. Ut enim ad minim.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 列排序 -->
+<h1>Hello, world!</h1>
+ 
+<div class="row">
+    <p>排序前</p>
+    <div class="col-md-4" style="background-color: #dedef8;
+        box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        我在左边
+    </div>
+    <div class="col-md-8" style="background-color: #dedef8;
+        box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        我在右边
+    </div>
+</div><br>
+<div class="row">
+   <p>排序后</p>
+   <div class="col-md-4 col-md-push-8"
+       style="background-color: #dedef8;
+       box-shadow: inset 1px -1px 1px #444,
+       inset -1px 1px 1px #444;">
+       我在左边
+   </div>
+   <div class="col-md-8 col-md-pull-4"
+       style="background-color: #dedef8;
+       box-shadow: inset 1px -1px 1px #444,
+       inset -1px 1px 1px #444;">
+       我在右边
+   </div>
+</div>
+
+<!-- 内联子标题 -->
+<h1>我是标题1 h1. <small>我是副标题1 h1</small></h1>
+<h2>我是标题2 h2. <small>我是副标题2 h2</small></h2>
+<h3>我是标题3 h3. <small>我是副标题3 h3</small></h3>
+<h4>我是标题4 h4. <small>我是副标题4 h4</small></h4>
+<h5>我是标题5 h5. <small>我是副标题5 h5</small></h5>
+<h6>我是标题6 h6. <small>我是副标题6 h6</small></h6>
+
+<!-- 引导主体副本 -->
+<h2>引导主体副本</h2>
+<p class="lead">这是一个演示引导主体副本用法的实例。这是一个演示引导主体副本用法的实例。这是一个演示引导主体副本用法的实例。这是一个演示引导主体副本用法的实例。这是一个演示引导主体副本用法的实例。这是一个演示引导主体副本用法的实例。这是一个演示引导主体副本用法的实例。这是一个演示引导主体副本用法的实例。</p>
+
+<!-- 强调 -->
+<small>本行内容是在标签内</small><br>
+<strong>本行内容是在标签内</strong><br>
+<em>本行内容是在标签内，并呈现为斜体</em><br>
+<p class="text-left">向左对齐文本</p>
+<p class="text-center">居中对齐文本</p>
+<p class="text-right">向右对齐文本</p>
+<p class="text-muted">本行内容是减弱的</p>
+<p class="text-primary">本行内容带有一个 warning class</p>
+<p class="text-success">本行内容带有一个 success class</p>
+<p class="text-info">本行内容带有一个 info class</p>
+<p class="text-warning">本行内容带有一个 warning class</p>
+<p class="text-danger">本行内容带有一个 danger class</p>
+
+<!-- 缩写 -->
+<abbr title="World Wide Web">WWW</abbr><br>
+<abbr title="Real Simple Syndication" class="initialism">RSS</abbr>
+
+<!--列表-->
+<h4>有序列表</h4>
+<ol>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+</ol>
+
+<h4>无序列表</h4>
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+</ul>
+
+<h4>未定义样式列表</h4>
+<ul class="list-unstyled">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+</ul>
+
+<h4>内联列表</h4>
+<ul class="list-inline">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+</ul>
+
+<h4>定义列表</h4>
+<dl>
+    <dt>Description 1</dt>
+    <dd>Item 1</dd>
+    <dt>Description 2</dt>
+    <dd>Item 2</dd>
+</dl>
+
+<h4>水平的定义列表</h4>
+<dl class="dl-horizontal">
+    <dt>Description 1</dt>
+    <dd>Item 1</dd>
+    <dt>Description 2</dt>
+    <dd>Item 2</dd>
+</dl>
+
+<!-- 背景颜色表格 -->
+<table class="table table-bordered table-hover">
+    <caption>上下文表格布局</caption>
+    <thead>
+        <tr>
+            <th class="text-center">产品</th>
+            <th class="text-center">付款日期</th>
+            <th class="text-center">状态</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="active">
+            <td class="text-center">产品1</td>
+            <td class="text-center">23/11/2013</td>
+            <td class="text-center">待发货</td>
+        </tr>
+        <tr class="success">
+            <td class="text-center">产品2</td>
+            <td class="text-center">10/11/2013</td>
+            <td class="text-center">发货中</td>
+        </tr>
+        <tr  class="warning">
+            <td class="text-center">产品3</td>
+            <td class="text-center">20/10/2013</td>
+            <td class="text-center">待确认</td>
+        </tr>
+        <tr  class="danger">
+            <td class="text-center">产品4</td>
+            <td class="text-center">20/10/2013</td>
+            <td class="text-center">已退货</td>
+        </tr>
+    </tbody>
+</table>
+
+<!--内联表单-->
+<h2>内联表单</h2>
+<form class="form-inline" role="form">
+    <div class="form-group">
+        <label class="sr-only" for="name">名称</label>
+        <input type="text" class="form-control" id="name"
+           placeholder="请输入名称">
+    </div>
+    <div class="form-group">
+        <label class="sr-only" for="inputfile">文件输入</label>
+        <input type="file" id="inputfile">
+    </div>
+    <div class="checkbox">
+        <label>
+        <input type="checkbox"> 请打勾
+        </label>
+    </div>
+
+    <button type="submit" class="btn btn-default">提交</button>
+</form>
+
+<!--水平表单-->
+<h2>水平表单</h2>
+<form class="form-horizontal" role="form">
+    <div class="form-group">
+        <label for="firstname" class="col-sm-2 control-label">名字</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="firstname"
+               placeholder="请输入名字">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastname" class="col-sm-2 control-label">姓</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="lastname"
+               placeholder="请输入姓">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 请记住我
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">登录</button>
+        </div>
+    </div>
+</from>
+
+<h2>按钮</h2>
+<!-- 标准的按钮 -->
+<button type="button" class="btn btn-default">默认按钮</button>
+<!-- 提供额外的视觉效果，标识一组按钮中的原始动作 -->
+<button type="button" class="btn btn-primary">原始按钮</button>
+<!-- 表示一个成功的或积极的动作 -->
+<button type="button" class="btn btn-success">成功按钮</button>
+<!-- 信息警告消息的上下文按钮 -->
+<button type="button" class="btn btn-info">信息按钮</button>
+<!-- 表示应谨慎采取的动作 -->
+<button type="button" class="btn btn-warning">警告按钮</button>
+<!-- 表示一个危险的或潜在的负面动作 -->
+<button type="button" class="btn btn-danger">危险按钮</button>
+<!-- 并不强调是一个按钮，看起来像一个链接，但同时保持按钮的行为 -->
+<button type="button" class="btn btn-link">链接按钮</button>
+
+<p>
+    <button type="button" class="btn btn-primary btn-lg">
+       大的原始按钮
+    </button>
+    <button type="button" class="btn btn-default btn-lg">
+       大的按钮
+    </button>
+</p>
+<p>
+    <button type="button" class="btn btn-primary">
+       默认大小的原始按钮
+    </button>
+    <button type="button" class="btn btn-default">
+       默认大小的按钮
+    </button>
+</p>
+<p>
+    <button type="button" class="btn btn-primary btn-sm">
+       小的原始按钮
+    </button>
+    <button type="button" class="btn btn-default btn-sm">
+       小的按钮
+    </button>
+</p>
+<p>
+    <button type="button" class="btn btn-primary btn-xs">
+       特别小的原始按钮
+    </button>
+    <button type="button" class="btn btn-default btn-xs">
+       特别小的按钮
+    </button>
+</p>
+<p>
+    <button type="button" class="btn btn-primary btn-lg btn-block">
+       块级的原始按钮
+    </button>
+    <button type="button" class="btn btn-default btn-lg btn-block">
+       块级的按钮
+    </button>
+</p>
+
+<h2>图片</h2>
+<img src="/static/img/1.jpg" class="img-rounded">
+<img src="/static/img/1.jpg" class="img-circle">
+<img src="/static/img/1.jpg" class="img-thumbnail">
+
+<div class="row visible-on">
+    <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+        box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        <span class="hidden-xs">特别小型</span>
+        <span class="visible-xs">✔ 在特别小型设备上可见</span>
+    </div>
+    <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+        box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        <span class="hidden-sm">小型</span>
+        <span class="visible-sm">✔ 在小型设备上可见</span>
+    </div>
+    <div class="clearfix visible-xs"></div>
+    <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+        box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        <span class="hidden-md">中型</span>
+        <span class="visible-md">✔ 在中型设备上可见</span>
+    </div>
+    <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+        box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        <span class="hidden-lg">大型</span>
+        <span class="visible-lg">✔ 在大型设备上可见</span>
+    </div>
+</div>
+
+<h2>警告</h2>
+<div class="alert alert-success">成功！很好地完成了提交。</div>
+<div class="alert alert-info">信息！请注意这个信息。</div>
+<div class="alert alert-warning">警告！请不要提交。</div>
+<div class="alert alert-danger">错误！请进行一些更改。</div>
+
+<div class="alert alert-success alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+    ×
+    </button>
+    成功！很好地完成了提交。
+</div>
+<div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+    ×
+    </button>
+    信息！请注意这个信息。
+</div>
+<div class="alert alert-warning alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+    ×
+    </button>
+    警告！请不要提交。
+</div>
+<div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+    ×
+    </button>
+    错误！请进行一些更改。
+</div>
+
+{% endblock %}
