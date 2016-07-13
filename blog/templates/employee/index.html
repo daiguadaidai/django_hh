@@ -15,7 +15,7 @@
         <div class='container'>
             <h1>Hello alen</h1>
         </div>
-        <li>emps: {{ emps }}</li>
+        <li>emps: {{ pagination.objs }}</li>
         
         <table>
             <tr>
@@ -24,7 +24,7 @@
                 <th>age</th>
                 <th>gender</th>
             </tr>
-            {% for emp in emps %}
+            {% for emp in pagination.objs %}
             <tr>
                 <td>{{ forloop.counter }}</td>
                 <td>{{ emp.name }}</td>
@@ -63,6 +63,30 @@
         {% for page_item in page_items %}
             {{ page_item }}
         {% endfor %}
+
+<br />
+        {% if pagination.cur_page != 1 %}
+            <a href="?cur_page=1">&lt;&lt;</a>  
+            <a href="?cur_page={{ pagination.pre_page }}">&lt;</a>  
+        {% endif %}
+
+        {{ pagination.start_page_omit_symbol }}
+
+        {% for page_item in pagination.page_items %}
+            {% if page_item == pagination.cur_page %}
+                {{ page_item }}
+            {% else %}
+                <a href="?cur_page={{ page_item }}">{{ page_item }}</a>  
+            {% endif %}
+        {% endfor%}
+
+        {{ pagination.end_page_omit_symbol }}
+
+        {% if pagination.cur_page != pagination.all_page %}
+            <a href="?cur_page={{ pagination.next_page }}">&gt;</a>  
+            <a href="?cur_page={{ pagination.all_page }}">&gt;&gt;</a>  
+        {% endif %}
+
 
     </body>
 </html>
