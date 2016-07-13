@@ -1,8 +1,8 @@
 from django.contrib import admin
-from blog.models import Employee
+# from blog.models import Employee
 
 
 # Register your models here.
 
-admin.site.register(Employee)
+# dmin.site.register(Employee)
 

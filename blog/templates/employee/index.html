@@ -1,0 +1,69 @@
+{% load staticfiles %}
+
+<html>
+    <head>
+        <!-- add css -->
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-theme.min.css' %}">
+        
+        <!-- add js -->
+        <script type="text/javascript" src="{% static 'jquery/js/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    </head>
+
+    <body>
+        <div class='container'>
+            <h1>Hello alen</h1>
+        </div>
+        <li>emps: {{ emps }}</li>
+        
+        <table>
+            <tr>
+                <th>num</th>
+                <th>name</th>
+                <th>age</th>
+                <th>gender</th>
+            </tr>
+            {% for emp in emps %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ emp.name }}</td>
+                <td>{{ emp.age }}</td>
+                <td>
+                {% if emp.gender == 1 %}
+                    男
+                {% elif emp.gender == 2 %}
+                    女
+                {% else %}
+                    其他
+                {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <!-- 如果当前是第一页，就不显示【上一页】链接 -->  
+        {% ifnotequal cur_page 1 %}  
+            <a href="?cur_page={{ cur_page }}&&all_page={{ all_page }}&&pageType=pageUp">  
+                上一页  
+            </a>  
+        {% endifnotequal %}   
+  
+        第{{ cur_page }}/{{ all_page }}页   
+  
+         <!-- 如果当前是最后一页，就不显示【下一页】链接 -->  
+        {% ifnotequal cur_page all_page %}  
+            <a href="?cur_page={{ cur_page }}&&all_page={{ all_page }}&&pageType=pageDown">  
+                下一页  
+            </a>  
+        {% endifnotequal %}  
+
+<br />
+
+        {% for page_item in page_items %}
+            {{ page_item }}
+        {% endfor %}
+
+    </body>
+</html>
+

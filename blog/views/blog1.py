@@ -6,7 +6,8 @@ from common.util.choices_field_value import ChoicesFieldValue
 
 # Create your views here.
 
-def index(request, id):
+def index(request):
+    id = 1
     user = {'name': 'HH',
             'age': 25,
             'gender': 'gen',
@@ -19,7 +20,7 @@ def index(request, id):
 
     emps = Employee.objects.all()
 
-    return render(request, 'index.html', {'title': 'title', 'user': user, 'id': id, 'emps': emps})
+    return render(request, 'index.html', {'title': 'title', 'user': user, 'emps': emps})
 
 def test(request):
     return render(request, 'test.html')
